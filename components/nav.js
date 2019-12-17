@@ -1,13 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 
-const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
 const Nav = () => (
   <nav>
     <ul>
@@ -15,19 +8,12 @@ const Nav = () => (
         <Link href="/">
           <a>Home</a>
         </Link>
+      </li>
+      <li>
         <Link href="/about">
           <a>About</a>
         </Link>
       </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
     </ul>
 
     <style jsx>{`
