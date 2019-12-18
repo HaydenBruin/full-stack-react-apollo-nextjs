@@ -7,12 +7,20 @@ const GET_HABITS = gql`
     habits {
       _id
       name
+      events {
+        _id
+        date
+      }
     }
   }
 `;
 
 const HabitList = () => {
-  const { data, loading } = useQuery(GET_HABITS);
+  const { data, loading, error } = useQuery(GET_HABITS);
+  if(error) {
+    console.log('error: ',error);
+    return <section />;
+  }
   if(loading) return <section />
 
   const { habits } = data;
@@ -22,7 +30,7 @@ const HabitList = () => {
       <h2>My Habits</h2>
 
       {habits.map((habit, index) => (
-        <Habit index={habit._id} key={habit} habit={habit}/>
+        <Habit index={habit._id} key={habit._id} habit={habit}/>
       ))}
     </section>
   )

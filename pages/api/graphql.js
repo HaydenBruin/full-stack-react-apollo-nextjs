@@ -14,7 +14,7 @@ const fakeTypeDefs = gql`
 const fakeResolvers = {
   Query: {
     sayHello: () => { 
-      return 'Hello level up!';
+      return 'Tracker app';
     }
   }
 }
