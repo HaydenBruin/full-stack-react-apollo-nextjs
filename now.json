@@ -1,0 +1,5 @@
+{
+  "env": {
+    "MONGO_URL": "mongodb+srv://habitsapp:zoMDaZbkAOy976sK@habitsapp-mcu9k.mongodb.net/test?retryWrites=true&w=majority"
+  }
+}
