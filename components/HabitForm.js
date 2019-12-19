@@ -29,20 +29,26 @@ const HabitForm = () => {
         })
       }
       else {
-        co
+        
       }
     }}>
       <div className="fields">
         <input type="text" name="habit" value={newHabit} onChange={(e) => setNewHabit(e.target.value)} placeholder="Enter new habit..."/>
         <button>Create</button>
       </div>
-
+      
       <style jsx>{`
+        form {
+          max-width: 600px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0 30px;
+        }
         .fields {
           display: flex;
           align-items: center;
           justify-content: space-evenly;
-          margin-bottom: 15px;
+          margin-bottom: 30px;
         }
         input {
           width: 100%;
@@ -57,6 +63,7 @@ const HabitForm = () => {
           border: 0;
           display:inline-block;
           padding: 0 15px;
+          font-size: 16px;
           height: 50px;
           line-height: 50px;
           border-radius: 5px;
@@ -64,8 +71,8 @@ const HabitForm = () => {
           text-decoration:none;
           font-family:'Roboto',sans-serif;
           font-weight:400;
-          color:#FFFFFF;
-          background-color:#3369ff;
+          color:#fff;
+          background-color:#FF0075;
           box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
           text-align:center;
           position:relative;

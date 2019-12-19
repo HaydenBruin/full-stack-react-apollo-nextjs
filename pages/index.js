@@ -27,10 +27,11 @@ const Home = () => {
 
       <div className="hero">
         <h1 className="title">{data.sayHello}</h1>
-        <div className="list">
-          <HabitForm />
-          <HabitList />
-        </div>
+        <HabitForm />
+      </div>
+
+      <div className="list">
+        <HabitList />
       </div>
 
       <style jsx>{`
@@ -38,12 +39,13 @@ const Home = () => {
           width: 800px;
           max-width: 100%;
           margin: 30px auto;
-          padding: 30px;
           background: #FFF;
         }
         .hero {
           width: 100%;
-          color: #333;
+          color: #FFFFFF;
+          background: #4072FF;
+          padding: 30px;
         }
         .hero h1 {
           padding: 0;
@@ -60,6 +62,7 @@ const Home = () => {
         .list {
           max-width: 600px;
           margin: 0 auto;
+          padding: 30px;
         }
       `}</style>
     </div>
