@@ -27,7 +27,7 @@ const Habit = ({ habit, index }) => {
   if(isRemoved) return null;
   return (
     <article>
-      <h3 style={{ borderColor: colors[index] }}>{habit.name} ({habit._id})</h3>
+      <h3 style={{ borderColor: colors[index] }}>{habit.name}</h3>
       <span onClick={() => {
         removeHabit({
           variables: {
@@ -36,6 +36,7 @@ const Habit = ({ habit, index }) => {
         })
         setIsRemoved(true)
       }}>X</span>
+      <div className="id">{habit._id}</div>
       <div className="buttons">
         {dates.map(date => {
           return <HabitButton key={date.getTime()} date={date} habitId={habit._id} events={habit.events} />
@@ -50,7 +51,7 @@ const Habit = ({ habit, index }) => {
           border-radius: 15px;
           box-shadow: 2px 2px 15px rgba(0,0,0, 0.1);
         }
-        article span {
+        span {
           position: absolute;
           top: 10px;
           right: 15px;
@@ -64,9 +65,17 @@ const Habit = ({ habit, index }) => {
           transition: all 0.3s ease;
           cursor: pointer;
         }
-        article span:hover {
+        span:hover {
           opacity: 0.8;
           transform: scale(1.1);
+        }
+        .id {
+          position: absolute;
+          bottom: 15px;
+          right: 15px;
+          color: #ccc;
+          font-size: 10px;
+          text-align: right;
         }
         h3 {
           margin-top: 0;

@@ -21,7 +21,7 @@ const Home = () => {
 
   if(loading) return <div>loading...</div>
   return (
-    <div>
+    <div className="habits">
       <Head title="Home" />
       <Nav />
 
@@ -34,9 +34,20 @@ const Home = () => {
       </div>
 
       <style jsx>{`
+        .habits {
+          width: 800px;
+          max-width: 100%;
+          margin: 30px auto;
+          padding: 30px;
+          background: #FFF;
+        }
         .hero {
           width: 100%;
           color: #333;
+        }
+        .hero h1 {
+          padding: 0;
+          margin: 0 0 30px 0;
         }
         .title {
           margin-top: 0;

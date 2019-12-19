@@ -24,12 +24,13 @@ const HabitList = () => {
 
   const { habits } = data;
 
+  if(habits.length === 0) return null;
   return (
     <section>
       <h2>My Habits</h2>
 
       {habits.map((habit, index) => (
-        <Habit index={habit._id} key={habit._id} habit={habit}/>
+        <Habit index={habit._id} key={habit._id} habit={habit} />
       ))}
     </section>
   )

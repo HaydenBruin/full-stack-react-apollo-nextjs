@@ -9,20 +9,20 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-      <li>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </li>
     </ul>
 
     <style jsx>{`
+      :global(*) {
+        box-sizing: border-box;
+      }
       :global(body) {
+        background: #f8f8f8;
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
       }
       nav {
+        display: none;
         text-align: center;
       }
       ul {

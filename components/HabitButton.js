@@ -42,21 +42,37 @@ const HabitButton = ({ date, habitId, events }) => {
 
   return (
     <span>
-      {date.getMonth() + 1}/{date.getDate()}
-      {foundDate ? (
-        <button onClick={() => removeEvent({ variables: {
-          habitId, eventId: foundDate._id
-        }})}>X</button>
-      ) : (
-        <button onClick={() => addEvent({ variables: {
-          habitId, date 
-        }})}>O</button>
-      )}
+      <div className="date">{date.getMonth() + 1}/{date.getDate()}</div>
+      <div className="details">
+        {foundDate ? (
+          <button onClick={() => removeEvent({ variables: {
+            habitId, eventId: foundDate._id
+          }})}>X</button>
+        ) : (
+          <button onClick={() => addEvent({ variables: {
+            habitId, date 
+          }})}>O</button>
+        )}
+      </div>
 
       <style jsx>{`
         span {
           display: flex;
           flex-direction: column;
+          background: #FFF;
+          width: 60px;
+          text-align: center;
+        }
+
+        .date {
+          background: #4072FF;
+          color: #FFF;
+          padding: 10px 0;
+        }
+
+        .details {
+          border: 1px solid #eee;
+          border-top: 0;
         }
           
         span + span {
@@ -66,7 +82,13 @@ const HabitButton = ({ date, habitId, events }) => {
         button {
           border: none;
           background: transparent;
-          margin-top: 1rem;
+          padding: 10px 0;
+          font-size: 18px;
+          width: 100%;
+          cursor: pointer;
+        }
+        button:hover {
+          background: #eee;
         }
       `}</style>
     </span>
